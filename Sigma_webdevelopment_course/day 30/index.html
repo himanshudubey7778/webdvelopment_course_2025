@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css Variables</title>
+
+    <style>
+
+        :root{
+            --color: rgb(242, 236, 242);
+            --seccolor: rgb(181, 134, 191);
+            --thicolor: rgb(6, 3, 5);
+            --defpad: 23px;
+            --defopacity: 0.2;
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav{
+            background-color: var(--color);
+        }
+
+        ul{
+            display: flex;
+        }
+
+        ul li{
+            opacity: var(--defopacity);
+            list-style: none;
+            padding: var(--defpad);
+            /* margin: 30px; */
+            border: 12px solid var(--thicolor);
+        }
+
+        ul li:first-child {
+             --color: rgb(54, 201, 38);
+            background-color: var(--color);
+        }
+
+
+        ul li:nth-child(2) {
+             --color: rgb(158, 74, 48);
+            background-color: var(--color);
+        }
+        
+        ul li:nth-child(3) {
+             --color: rgb(51, 226, 215);
+            background-color: var(--color);
+        }
+
+
+
+        .container{
+            background-color: var(--seccolor);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="nav">
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+
+    <div class="container">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi quod numquam cumque, aspernatur assumenda
+        molestias repudiandae quibusdam nesciunt aliquid reiciendis sed exercitationem maiores laudantium iste mollitia
+        unde architecto? Laborum magnam corporis accusantium ducimus corrupti dolorem, asperiores officia veritatis!
+        Ipsam quaerat perspiciatis quam. Distinctio, illum sint.
+    </div>
+</body>
+
+</html>

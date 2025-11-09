@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            box-sizing: border-box;
+            border: 2px solid black;
+            width: 80vw;
+            height: 10vh;
+            margin: auto;
+            background-color: aquamarine;
+        }
+
+        .container {
+            box-sizing: border-box;
+            border: 2px solid black;
+            width: 80vw;
+            /* height: 80vh; */
+            min-height: 80vh;
+            margin: 23px auto;
+            font-size: 10px;
+            background-color: aquamarine;
+        }
+
+        .container > div {
+            font-size: 2em;
+            /* font-size: 2rem; */
+            border: 2px solid red;
+
+            /* parent ka 50 % */
+            width: 50%;
+        }
+
+        .container > div > div {
+            border: 2px solid blue;
+            width: 50%;
+        }
+
+        .mycont {
+            box-sizing: border-box;
+            margin: 23px auto;
+            border: 2px solid black;
+            color: rgb(12, 12, 2);
+            /* background-color: red; */
+            font-size: 22px;
+            width: 100vmin;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        This is a box!
+    </div>
+
+    <!-- No rule in margin and width EXP inline element -->
+    <!-- <span class="box">
+        This is a box!
+    </span> -->
+
+    <!-- <div class="container">
+        <p>
+
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora quod in reprehenderit facere ipsa
+            accusantium, reiciendis nihil ducimus, ipsam expedita id at nobis dolores earum modi minima minus saepe!
+            Enim praesentium vel et fugit exercitationem veniam ullam. Quidem laboriosam unde inventore porro beatae
+            neque sapiente facere. Veniam aut porro esse labore earum repudiandae autem perferendis dolorem.
+
+            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus quae quibusdam molestiae rem tempore
+                nostrum, nam repellat at nesciunt laboriosam, ipsa facilis iusto!</div>
+        </p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero error exercitationem eos enim culpa voluptatem
+        qui! Officiis rerum placeat minima laborum ipsa illo, similique nihil et, amet eos quia minus nemo debitis aut
+        nam, labore cum ducimus nostrum facere! Cumque alias itaque eius similique doloremque eligendi neque harum ullam
+        ut aut debitis dicta praesentium id ex, quibusdam amet fugiat saepe libero. Minus, cupiditate? Maiores
+        consequatur explicabo atque temporibus architecto officia nesciunt ratione rem obcaecati tempore aliquid, libero
+        quis hic consequuntur. Dolor veniam facere eveniet doloremque nostrum explicabo blanditiis, placeat tempore a
+        consectetur, molestiae non voluptatibus sed, excepturi iusto ipsum voluptatem? Amet hic repellendus praesentium
+        necessitatibus eius blanditiis odit error ipsa culpa expedita voluptate consequuntur molestias perferendis
+
+    </div> -->
+    
+    <div class="container">
+        <div>
+
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora quod in reprehenderit facere ipsa
+            accusantium, reiciendis nihil ducimus, ipsam expedita id at nobis dolores earum modi minima minus saepe!
+            Enim praesentium vel et fugit exercitationem veniam ullam. Quidem laboriosam unde inventore porro beatae
+            neque sapiente facere. Veniam aut porro esse labore earum repudiandae autem perferendis dolorem.
+
+            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus quae quibusdam molestiae rem tempore
+                nostrum, nam repellat at nesciunt laboriosam, ipsa facilis iusto!</div>
+        </div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero error exercitationem eos enim culpa voluptatem
+        qui! Officiis rerum placeat minima laborum ipsa illo, similique nihil et, amet eos quia minus nemo debitis aut
+        nam, labore cum ducimus nostrum facere! Cumque alias itaque eius similique doloremque eligendi neque harum ullam
+        ut aut debitis dicta praesentium id ex, quibusdam amet fugiat saepe libero. Minus, cupiditate? Maiores
+        consequatur explicabo atque temporibus architecto officia nesciunt ratione rem obcaecati tempore aliquid, libero
+        quis hic consequuntur. Dolor veniam facere eveniet doloremque nostrum explicabo blanditiis, placeat tempore a
+        consectetur, molestiae non voluptatibus sed, excepturi iusto ipsum voluptatem? Amet hic repellendus praesentium
+        necessitatibus eius blanditiis odit error ipsa culpa expedita voluptate consequuntur molestias perferendis
+
+    </div>
+    <div class="mycont">
+        I am another container create!
+    </div>
+
+
+
+</body>
+
+</html>

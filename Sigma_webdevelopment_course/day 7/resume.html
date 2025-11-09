@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divyansh Dubey - Professional Resume</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        c:\Users\Dell\OneDrive\Pictures\divyansh.jpg
+        
+        /* Base styling for the document */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 20px 0;
+        }
+
+        /* Container designed to simulate A4 paper size */
+        .resume-container {
+            width: 210mm; /* A4 width */
+            min-height: 297mm; /* A4 height */
+            background: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 20px;
+            position: relative; /* For modal positioning */
+        }
+
+        /* Styling for print output (PDF/Paper) */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+                display: block;
+            }
+            .resume-container {
+                width: 100%;
+                min-height: auto;
+                box-shadow: none;
+                padding: 40px;
+            }
+            /* Ensure text is black for good printing */
+            h1, h2, p, ul, li {
+                color: #000 !important;
+            }
+            /* Hide tools and modal when printing */
+            .gemini-tools, .modal-overlay {
+                display: none !important;
+            }
+        }
+
+        .section-header {
+            border-bottom: 2px solid #3b82f6; /* Blue border for professional look */
+            margin-bottom: 12px;
+            padding-bottom: 4px;
+        }
+
+        .list-item {
+            margin-bottom: 4px;
+            line-height: 1.4;
+        }
+        
+        .contact-icon {
+            display: inline-block;
+            width: 1rem;
+            text-align: center;
+        }
+
+        /* Force 1-column layout for print/screen consistency */
+        .education-grid {
+            display: grid;
+            grid-template-columns: 3fr 3fr 2fr; /* Item | Institution | Status/Year */
+            gap: 8px;
+            align-items: center;
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            max-width: 90%;
+            width: 700px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        /* Loading Spinner */
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: #3b82f6;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="resume-container" id="resumeContainer">
+    
+    <!-- GEMINI TOOLS BUTTONS -->
+    <div class="gemini-tools absolute top-6 right-28 flex flex-col space-y-2 z-20">
+        <button id="coverLetterBtn" class="bg-indigo-500 hover:bg-indigo-600 text-white font-semibold text-xs py-2 px-3 rounded-lg shadow-md transition duration-150">
+           
+        </button>
+        <button id="interviewQaBtn" class="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold text-xs py-2 px-3 rounded-lg shadow-md transition duration-150">
+        </button>
+    </div>
+
+    <!-- HEADER & PHOTO SECTION -->
+    <header class="flex justify-between items-start mb-8">
+        <div>
+            <h1 class="text-4xl font-extrabold text-gray-800 mb-1">Divyansh Dubey</h1>
+            <!-- Contact Details -->
+            <div class="text-sm text-gray-600 space-y-1 mt-2">
+                <p><span class="contact-icon">&#9742;</span> 7068963242</p>
+                <p><span class="contact-icon">&#9993;</span> divdubey2611@gmail.com</p>
+                <p><span class="contact-icon">&#128205;</span> Sultanpur, Uttar Pradesh</p>
+            </div>
+        </div>
+
+        <!-- Headshot (45mm wide is approximately 72px) -->
+        <div class="w-20 h-20 rounded-full overflow-hidden border-2 border-gray-200 shadow-md">
+            <!-- Image source updated to the LATEST uploaded file ID -->
+            <img 
+                src="divyansh.jpg"
+                alt="Divyansh Dubey Headshot" 
+                class="object-cover w-full h-full"
+            >
+        </div>
+    </header>
+
+    <!-- CAREER OBJECTIVE -->
+    <section class="mb-6">
+        <h2 class="text-xl font-bold text-gray-700 section-header">Career Objective</h2>
+        <p id="careerObjective" class="text-gray-700 text-sm leading-relaxed">
+            Dedicated and detail-oriented B.Com student with strong technical and analytical skills, seeking a position in the Airport CCTV Control Room. Eager to apply computer, monitoring abilities, and quick decision-making skills to ensure security, safe and smooth airport operations.
+        </p>
+    </section>
+
+    <!-- EDUCATIONAL QUALIFICATION -->
+    <section class="mb-6">
+        <h2 class="text-xl font-bold text-gray-700 section-header">Educational Qualification</h2>
+        <div class="text-sm text-gray-700 space-y-2">
+            
+            <!-- Header for table-like structure -->
+            <div class="education-grid font-semibold text-gray-800 pb-1 border-b border-gray-200">
+                <span class="font-bold">Degree / Course</span>
+                <span class="font-bold">Institution</span>
+                <span class="font-bold">Status</span>
+            </div>
+
+            <div class="education-grid">
+                <span>B.Com (Bachelor of Commerce)</span>
+                <span>Navyug PG College, Sultanpur</span>
+                <span>Pursuing</span>
+            </div>
+            <div class="education-grid">
+                <span>Intermediate (12th)</span>
+                <span>Baba Balak Das Inter College, Ratanpur</span>
+                <span>Passed</span>
+            </div>
+            <div class="education-grid">
+                <span>High School (10th)</span>
+                <span>Baba Balak Das Inter College, Ratanpur</span>
+                <span>Passed</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION (Technical & Soft) -->
+    <section class="mb-6 flex space-x-8">
+        
+        <!-- TECHNICAL SKILLS -->
+        <div class="w-1/2">
+            <h2 class="text-xl font-bold text-gray-700 section-header">Technical Skills</h2>
+            <ul id="technicalSkillsList" class="list-disc ml-5 text-sm text-gray-700">
+                <li class="list-item">Strong analytical and problem-solving skills</li>
+                <li class="list-item">Proficient in computer applications</li>
+                <li class="list-item">Effective monitoring and surveillance abilities</li>
+                <li class="list-item">Quick decision-making under pressure</li>
+            </ul>
+        </div>
+        
+        <!-- SOFT SKILLS -->
+        <div class="w-1/2">
+            <h2 class="text-xl font-bold text-gray-700 section-header">Soft Skills</h2>
+            <ul class="list-disc ml-5 text-sm text-gray-700">
+                <li class="list-item">Good Communication (Hindi & Basic English)</li>
+                <li class="list-item">Patience and Professionalism</li>
+                <li class="list-item">Teamwork and Discipline</li>
+            </ul>
+        </div>
+    </section>
+    
+    <!-- LANGUAGES KNOWN & PERSONAL DETAILS -->
+    <section class="mb-8 flex space-x-8">
+        
+        <!-- LANGUAGES KNOWN -->
+        <div class="w-1/2">
+            <h2 class="text-xl font-bold text-gray-700 section-header">Languages Known</h2>
+            <ul class="list-disc ml-5 text-sm text-gray-700">
+                <li class="list-item">Hindi – Fluent</li>
+                <li class="list-item">English – Basic (Improving)</li>
+            </ul>
+        </div>
+        
+        <!-- PERSONAL DETAILS -->
+        <div class="w-1/2">
+            <h2 class="text-xl font-bold text-gray-700 section-header">Personal Details</h2>
+            <div class="text-sm text-gray-700 space-y-1">
+                <p><span class="font-semibold">Father’s Name:</span> Raj Kumar Dubey</p>
+                <p><span class="font-semibold">Date of Birth:</span> 01/01/2003</p>
+                <p><span class="font-semibold">Gender:</span> Male</p>
+                <p><span class="font-semibold">Marital Status:</span> Single</p>
+                <p><span class="font-semibold">Nationality:</span> Indian</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- DECLARATION -->
+    <section class="mb-10">
+        <h2 class="text-xl font-bold text-gray-700 section-header">Declaration</h2>
+        <p class="text-gray-700 text-sm leading-relaxed mb-12">
+            I hereby declare that all the information mentioned above is true to the best of my knowledge.
+        </p>
+    </section>
+
+    <!-- SIGNATURE / PLACE / DATE FOOTER -->
+    <footer class="flex justify-between items-end mt-auto text-sm">
+        <div class="flex flex-col space-y-6">
+            <p class="font-semibold">Signature: <span class="font-normal border-b border-black pl-4">Divyansh Dubey</span></p>
+            <p class="font-semibold">Place: <span class="font-normal border-b border-black pl-4">Sultanpur, Uttar Pradesh</span></p>
+            <p class="font-semibold">Date: <span class="font-normal border-b border-black pl-4">25/07/2025</span></p>
+        </div>
+        <div class="flex flex-col items-end">
+            <!-- Placeholder for signature image if needed -->
+            <div class="w-32 h-10 border-b border-gray-400"></div>
+            <p class="mt-1 font-bold">Divyansh Dubey</p>
+        </div>
+    </footer>
+
+</div>
+
+<!-- MODAL FOR LLM OUTPUT -->
+<div id="resultModal" class="modal-overlay hidden">
+    <div class="modal-content">
+        <div class="flex justify-between items-center mb-4 border-b pb-2">
+            <h3 id="modalTitle" class="text-xl font-bold text-gray-800"></h3>
+            <button id="closeModalBtn" class="text-gray-500 hover:text-gray-800 text-3xl leading-none">&times;</button>
+        </div>
+        <div id="modalBody" class="text-gray-700 whitespace-pre-wrap text-sm leading-relaxed">
+            <!-- Content will be inserted here -->
+        </div>
+        <div id="loadingIndicator" class="hidden text-center py-4">
+            <div class="spinner mx-auto"></div>
+            <p class="text-sm text-gray-600 mt-2">Generating content with Gemini...</p>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${""}`;
+    const coverLetterBtn = document.getElementById('coverLetterBtn');
+    const interviewQaBtn = document.getElementById('interviewQaBtn');
+    const resultModal = document.getElementById('resultModal');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalBody = document.getElementById('modalBody');
+    const loadingIndicator = document.getElementById('loadingIndicator');
+
+    // --- Helper Functions ---
+
+    /**
+     * Extracts text content from a list element (ul).
+     * @param {string} elementId - The ID of the <ul> element.
+     * @returns {string} - Formatted list of skills.
+     */
+    function extractSkills(elementId) {
+        const ul = document.getElementById(elementId);
+        if (!ul) return '';
+        return Array.from(ul.children)
+            .map(li => `- ${li.textContent.trim()}`)
+            .join('\n');
+    }
+
+    /**
+     * Shows the modal with a title and optional loading state.
+     * @param {string} title - The title of the modal.
+     * @param {boolean} showLoading - Whether to show the loading spinner.
+     */
+    function showModal(title, showLoading) {
+        modalTitle.textContent = title;
+        modalBody.innerHTML = '';
+        if (showLoading) {
+            loadingIndicator.classList.remove('hidden');
+        } else {
+            loadingIndicator.classList.add('hidden');
+        }
+        resultModal.classList.remove('hidden');
+    }
+
+    /**
+     * Hides the modal.
+     */
+    function hideModal() {
+        resultModal.classList.add('hidden');
+    }
+
+    /**
+     * Fetches content from the Gemini API with exponential backoff.
+     * @param {string} prompt - The user prompt for the model.
+     * @param {number} [retryCount=0] - Current retry count.
+     * @returns {Promise<string>} - The generated text content.
+     */
+    async function fetchGeminiContent(prompt, retryCount = 0) {
+        const MAX_RETRIES = 5;
+        const body = JSON.stringify({
+            contents: [{ parts: [{ text: prompt }] }],
+            systemInstruction: {
+                parts: [{ text: "You are a professional resume assistant. Your output should be clean, focused, and formatted using markdown." }]
+            }
+        });
+
+        try {
+            const response = await fetch(API_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: body
+            });
+
+            if (!response.ok) {
+                if (response.status === 429 && retryCount < MAX_RETRIES) {
+                    const delay = Math.pow(2, retryCount) * 1000;
+                    // console.log(`Rate limit hit. Retrying in ${delay / 1000}s...`);
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                    return fetchGeminiContent(prompt, retryCount + 1);
+                }
+                throw new Error(`API call failed with status: ${response.status}`);
+            }
+
+            const result = await response.json();
+            const text = result?.candidates?.[0]?.content?.parts?.[0]?.text;
+            if (!text) {
+                throw new Error("Gemini response was empty or malformed.");
+            }
+            return text;
+
+        } catch (error) {
+            console.error('Gemini API Error:', error);
+            return `Error generating content: ${error.message}. Please try again.`;
+        }
+    }
+
+    // --- Core Logic ---
+
+    // 1. Cover Letter Generator
+    coverLetterBtn.addEventListener('click', async () => {
+        const objective = document.getElementById('careerObjective').textContent.trim();
+        const skills = extractSkills('technicalSkillsList');
+        const name = "Divyansh Dubey";
+        const targetRole = "Airport CCTV Control Room position";
+
+        const prompt = `Draft a professional and concise cover letter (maximum 3 paragraphs) for ${name} applying for the ${targetRole}. 
+        Focus on his career objective and skills.
+        
+        Career Objective: "${objective}"
+        
+        Key Skills:
+        ${skills}
+        
+        The letter should start with a formal salutation (Dear Hiring Manager,) and end with a formal closing (Sincerely,).`;
+
+        showModal('✨ Drafted Cover Letter', true);
+
+        const resultText = await fetchGeminiContent(prompt);
+        
+        loadingIndicator.classList.add('hidden');
+        modalBody.innerHTML = resultText.replace(/\n/g, '<br>'); // Simple newline to <br> for better viewing
+    });
+
+    // 2. Interview Q&A Generator
+    interviewQaBtn.addEventListener('click', async () => {
+        const objective = document.getElementById('careerObjective').textContent.trim();
+        const skills = extractSkills('technicalSkillsList') + '\n' + extractSkills('softSkillsList');
+
+        const prompt = `Based on the following profile, generate 5 challenging interview questions for a candidate seeking the Airport CCTV Control Room position. 
+        Format the output as a numbered list.
+        
+        Candidate Profile:
+        Objective: "${objective}"
+        Skills:
+        ${skills}`;
+
+        showModal('✨ Tailored Interview Questions', true);
+
+        const resultText = await fetchGeminiContent(prompt);
+        
+        loadingIndicator.classList.add('hidden');
+        // Convert Markdown list (numbered) to HTML list
+        let formattedText = resultText
+            .split('\n')
+            .filter(line => line.match(/^\d+\./)) // Filter lines starting with a number and a dot
+            .map(line => `<li class="mb-3 ml-2">${line.replace(/^\d+\.\s*/, '')}</li>`)
+            .join('');
+
+        if (formattedText) {
+            modalBody.innerHTML = `<ul class="list-none">${formattedText}</ul>`;
+        } else {
+             // Fallback if formatting is unexpected
+             modalBody.innerHTML = resultText.replace(/\n/g, '<br>');
+        }
+    });
+
+    // --- Modal Control ---
+
+    closeModalBtn.addEventListener('click', hideModal);
+    resultModal.addEventListener('click', (e) => {
+        if (e.target === resultModal) {
+            hideModal();
+        }
+    });
+
+    // --- Initial Photo Check ---
+    // Ensure the photo element is properly rendered by fixing the nested img tags if they were mistakenly introduced
+    document.addEventListener('DOMContentLoaded', () => {
+        const photoDiv = document.querySelector('.w-20.h-20.rounded-full.overflow-hidden');
+        if (photoDiv) {
+            // Check for duplicate or incorrect img tags inside the div
+            const imgTags = photoDiv.querySelectorAll('img');
+            if (imgTags.length > 1) {
+                // Keep only the last one (which should be the correct one)
+                for(let i = 0; i < imgTags.length - 1; i++) {
+                    imgTags[i].remove();
+                }
+            }
+        }
+    });
+
+</script>
+
+</body>
+</html>

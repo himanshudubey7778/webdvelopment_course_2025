@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar with Two Boxes & Floating Icon</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Header */
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        /* Navbar */
+        nav {
+            background-color: #444;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #00bcd4;
+        }
+
+        /* Main Section */
+        .main-content {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 40px 0;
+            flex-wrap: wrap; /* for responsive design */
+        }
+
+        /* Box */
+        .box {
+            background-color: #f5f5f5;
+            width: 40%;
+            min-width: 250px;
+            text-align: center;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 30px;
+        }
+
+        .box h2 {
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        /* Floating Icon */
+        .floating-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #00bcd4;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            transition: transform 0.2s ease;
+        }
+
+        .floating-icon:hover {
+            transform: scale(1.1);
+            background-color: #0097a7;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>My Website</h1>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <section class="main-content">
+        <div class="box">
+            <h2>Box 1</h2>
+            <p>This is the first box content.</p>
+        </div>
+        <div class="box">
+            <h2>Box 2</h2>
+            <p>This is the second box content.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Himanshudubey | All Rights Reserved</p>
+    </footer>
+
+    <!-- Floating Icon (example: chat or scroll button) -->
+    <div class="floating-icon">
+        💬
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Float Clear</title>
+    <style>
+        .Cards {
+            border: 2px solid black;
+            display: flow-root;
+            overflow: auto;
+        }
+
+        img {
+            float: left;
+        }
+
+        .Card {
+            border: 2px solid red;
+        }
+
+        .Card:nth-child(3){
+            background-color: aqua;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Cards">
+        <img src="https://img.freepik.com/premium-photo/fishing-sunset-with-man-boat_674594-17179.jpg" alt="lake & man"
+            width="250px">
+        <div class="Card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur impedit non dolorem alias eveniet sit
+                obcaecati quia cumque qui. Culpa sed quo, inventore nesciunt placeat unde reiciendis officia aut labore
+                magni repellendus quia porro.</p>
+        </div>
+        <div class="Card">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste incidunt libero reiciendis, impedit
+                expedita in? Consectetur maxime repellat provident, distinctio eum fuga ex recusandae eius, at totam
+                magni. Repellat deserunt nam corporis eaque dicta minima temporibus! Qui aspernatur facere earum quo
+                minima voluptas totam possimus tenetur autem, ex maiores consequuntur eveniet consectetur neque esse
+                eligendi dolorem veritatis distinctio cupiditate fugiat quos saepe incidunt, ea impedit. Fugiat
+                eligendi, adipisci impedit ducimus facere pariatur in architecto, nisi quos possimus placeat cupiditate
+                delectus soluta quo reiciendis fuga aspernatur maxime eum ipsa a. Fugit, ipsa. Excepturi saepe id
+                expedita mollitia nesciunt, ullam libero exercitationem doloremque ad quae eos dicta incidunt sed
+                possimus adipisci reiciendis. Cupiditate incidunt tenetur ab enim! Doloribus repellendus non ipsa
+                consectetur veniam nulla reiciendis quisquam in temporibus maiores. Ipsa numquam veritatis ex tempore
+                autem ipsam error iure suscipit totam delectus? Excepturi dolore ex mollitia vel beatae sunt labore
+                tempora nobis, cumque iure recusandae temporibus! Temporibus molestias vitae velit, sapiente iusto nam
+                voluptatum. Amet nobis natus ipsa vel, a ratione pariatur incidunt tenetur doloribus fugiat provident
+                labore vitae eaque eveniet ullam minus neque! Voluptate exercitationem sit voluptas ad consequuntur
+                perferendis iste ut, dolor labore? Enim excepturi exercitationem modi, eum fugit libero accusamus
+                consectetur temporibus deleniti incidunt ex quidem culpa amet laudantium error nam vitae optio iste
+                dolorem maiores quo neque alias consequuntur vel? Impedit aut non aliquam adipisci dolores similique
+                voluptatibus provident, aspernatur ipsam perferendis corporis? Corporis debitis ex iusto. Deleniti
+                dicta, adipisci praesentium atque nostrum quia corporis cumque ad quibusdam eveniet. Accusantium alias
+                perspiciatis ab sapiente accusamus a recusandae minus magni, veniam deleniti ratione, provident impedit
+                esse neque inventore odio eaque facere cupiditate itaque quam placeat vero et ea. Beatae quis minima
+                nostrum libero, odit maiores doloribus iusto nihil? Voluptate debitis pariatur tenetur veritatis rerum.
+                Aliquam qui, iste placeat quae accusantium aspernatur similique ea facere dignissimos maiores tempora
+                rerum debitis recusandae ullam blanditiis nostrum ratione illum quos doloribus laborum voluptates
+                veritatis soluta! Numquam suscipit qui cum! Quidem voluptatibus voluptate repudiandae dolore et!
+                Architecto, in.</p>
+        </div>
+        <div class="Card">Card 3</div>
+        <div class="Card">Card 4</div>
+    </div>
+</body>
+
+</html>
